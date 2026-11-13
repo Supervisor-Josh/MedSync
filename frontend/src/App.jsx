@@ -3,7 +3,7 @@ import axios from 'axios';
 import { db } from './db';
 import { Wifi, WifiOff, RefreshCw, AlertTriangle, Database, Shield, Activity, Terminal, Plus, Search, Server, Edit, Trash2, Trash } from 'lucide-react';
 
-const API_BASE = 'http://localhost:8000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 export default function App() {
   const [resources, setResources] = useState([]);
