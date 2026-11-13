@@ -7,6 +7,7 @@ from datetime import datetime
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 
+
 DATABASE_URL = "sqlite+aiosqlite:///./medsync.db"
 
 engine = create_async_engine(DATABASE_URL, echo=False)
@@ -43,6 +44,9 @@ async def init_db():
 
 app = FastAPI(title="MedSync FastAPI Backend")
 
+@app.get("/health")
+async def health_check():
+    return {"status": "ok"}
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
