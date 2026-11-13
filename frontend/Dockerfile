@@ -1,4 +1,4 @@
-# Stage 1: Build React static assets
+# Stage 1: Build the React application
 FROM node:18-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
